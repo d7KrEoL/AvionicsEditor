@@ -1,0 +1,61 @@
+﻿<Window x:Class="AvionicsEditor.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:mapsui="clr-namespace:Mapsui.UI;assembly=Mapsui.UI.Wpf"
+        xmlns:local="clr-namespace:AvionicsEditor"
+        mc:Ignorable="d"
+        Width="620"  
+        Height="480"  
+        Title="Avionics Editor" Loaded="Window_Loaded" ResizeMode="CanResizeWithGrip" MinHeight="580" MinWidth="460" SizeChanged="Window_SizeChanged" Background="Transparent" StateChanged="Window_StateChanged" MouseMove="Window_MouseMove">
+    <Grid Name="MainGrid">
+
+        <DockPanel LastChildFill="False">
+            <ToolBarPanel x:Name="LeftMenu" Width="36" Opacity="1" HorizontalAlignment="Center">
+                <TextBlock Text="Tools Menu" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0, 20" Foreground="White" TextWrapping="Wrap"/>
+                
+                <TextBlock Text=" Waypoints" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="-1, 3" Foreground="White" FontSize="10"/>
+
+                <Button x:Name="BInst_AddWPT" Margin="3,0" Content="WPT" Click="BInst_AddWPT_Click" Background="{x:Null}" Foreground="White" IsManipulationEnabled="True" AutomationProperties.HelpText="Add Waypoint" Cursor="Hand"/>
+                <TextBox x:Name="Z" Margin="0,2" Text="Z" Width="41" VerticalAlignment="Center" Background="#FF2D2D2D" Foreground="White" Visibility="Visible" TextChanged="Z_TextChanged" TextInput="Z_TextInput"/>
+<!--                <Button x:Name="BInst_AddTGT" Margin="3,0" Content="TGT" Background="{x:Null}" Foreground="White" Cursor="Hand"/>-->
+                <Button x:Name="BInst_EditWPT" Margin="3,0" Content="EDIT" Background="{x:Null}" Foreground="White" Cursor="Hand" Click="BInst_EditWPT_Click"/>
+<!--
+                <TextBlock Text="Airport" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0, 4" Foreground="White" FontSize="10"/>-->
+
+<!--                <Button x:Name="BInst_APR" Margin="3,0" Content="APR" Background="{x:Null}" Foreground="White" Cursor="Hand"/>-->
+<!--                <Button x:Name="BInst_GLD" Margin="3,0" Content="GLD" Background="{x:Null}" Foreground="White" Cursor="Hand"/>-->
+<!--                <Button x:Name="BInst_DRDM" Margin="3,0" Content="DRDM" Background="{x:Null}" Foreground="White" Cursor="Hand"/>-->
+<!--                <Button x:Name="BInst_BRDM" Margin="3,0" Content="BRDM" Background="{x:Null}" Foreground="White" Cursor="Hand"/>-->
+<!--                <Button x:Name="BInst_RW" Margin="3,0" Content="RW" Background="{x:Null}" Foreground="White" Cursor="Hand"/>-->
+<!--                <Button x:Name="BInst_BCN" Margin="3,0" Content="BCN" Background="{x:Null}" Foreground="White" Cursor="Hand"/>-->
+                
+                <TextBlock Text="Research" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0, 4" Foreground="White" FontSize="10"/>
+
+                <Button x:Name="BInst_Dist" Margin="3,5" Content="DST" Background="{x:Null}" Foreground="White" Click="BInst_Dist_Click" Cursor="Hand" />
+                <Button x:Name="BInst_Angle" Margin="3,-5" Content="ANGL" Background="{x:Null}" Foreground="White" Click="BInst_Angle_Click" Cursor="Hand"/>
+                <Button x:Name="BInst_Pos" Margin="3,5" Content="POS" Click="BInst_Pos_Click" Background="{x:Null}" Foreground="White" Cursor="Hand"/>
+
+                <TextBlock Text="File" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0, 4" Foreground="White" FontSize="10"/>
+
+                <Button x:Name="BFile_Open" Margin="3,5" Content="Open" Background="{x:Null}" Foreground="White" Cursor="Hand" Click="BFile_Open_Click"/>
+                <Button x:Name="BFile_Save" Margin="3,-5" Content="Save" Background="{x:Null}" Foreground="White" Cursor="Hand" Click="BFile_Save_Click"/>
+                <Button x:Name="BFile_SaveAs" Margin="3,5" Content="Save as" Background="{x:Null}" Foreground="White" Cursor="Hand" Click="BFile_SaveAs_Click"/>
+            </ToolBarPanel>
+            <ToolBarPanel DockPanel.Dock="Top" Height="25" Width="584">
+                <TextBlock TextWrapping="Wrap" HorizontalAlignment="Left" Width="582" Height="30">
+                    <TextBlock Text="  Pos set:   " VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0, 0" Foreground="White"/>
+                    <TextBox x:Name="X" Margin="0,-2" Text="X" Width="45" VerticalAlignment="Center" Background="#FF2D2D2D" Foreground="White"/>
+                    <TextBox x:Name="Y" Margin="0,-2" Text="Y" Width="45" VerticalAlignment="Center" Background="#FF2D2D2D" Foreground="White"/>
+                    <Button x:Name="SetPos" Content="Go To" Click="SetPos_Click" VerticalAlignment="Center" Background="{x:Null}" Height="19" Margin="5, -2" Foreground="White"/>
+                    <TextBlock x:Name ="TBox_Debug" Text="   No active tools   " VerticalAlignment="Center" HorizontalAlignment="Right" Margin="-2,-2" Foreground="White"/>
+                    
+                </TextBlock>
+            </ToolBarPanel>
+            <Grid Name="PanelMap"  Width="584" Cursor="Cross" >
+            </Grid>
+        </DockPanel>
+        <Border BorderBrush="White" BorderThickness="1"/>
+    </Grid>
+</Window>

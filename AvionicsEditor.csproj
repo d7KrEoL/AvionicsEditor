@@ -1,0 +1,340 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9BFDF196-494A-444D-9EB7-F19EF988DDEC}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>AvionicsEditor</RootNamespace>
+    <AssemblyName>AvionicsEditor</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BitMiracle.LibTiff.NET, Version=2.4.649.0, Culture=neutral, PublicKeyToken=53879b3e20e7a7d6, processorArchitecture=MSIL">
+      <HintPath>..\..\FPlannerSA\FPlannerSA\packages\BitMiracle.LibTiff.NET.2.4.649\lib\net40\BitMiracle.LibTiff.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="BrotliSharpLib, Version=0.3.2.0, Culture=neutral, PublicKeyToken=3f4e2a1cd615fcb7, processorArchitecture=MSIL">
+      <HintPath>..\..\FPlannerSA\FPlannerSA\packages\BrotliSharpLib.0.3.3\lib\net451\BrotliSharpLib.dll</HintPath>
+    </Reference>
+    <Reference Include="BruTile, Version=5.0.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\FPlannerSA\FPlannerSA\packages\BruTile.5.0.6\lib\netstandard2.0\BruTile.dll</HintPath>
+    </Reference>
+    <Reference Include="BruTile.MbTiles, Version=5.0.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\FPlannerSA\FPlannerSA\packages\BruTile.MbTiles.5.0.6\lib\netstandard2.0\BruTile.MbTiles.dll</HintPath>
+    </Reference>
+    <Reference Include="DotSpatial.Projections, Version=4.0.656.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\FPlannerSA\FPlannerSA\packages\DotSpatial.Projections.4.0.656\lib\netstandard2.0\DotSpatial.Projections.dll</HintPath>
+    </Reference>
+    <Reference Include="ExCSS, Version=4.2.3.0, Culture=neutral, PublicKeyToken=bdbe16be9b936b9a, processorArchitecture=MSIL">
+      <HintPath>..\..\FPlannerSA\FPlannerSA\packages\ExCSS.4.2.3\lib\net48\ExCSS.dll</HintPath>
+    </Reference>
+    <Reference Include="GeoAPI, Version=1.7.5.0, Culture=neutral, PublicKeyToken=a1a0da7def465678, processorArchitecture=MSIL">
+      <HintPath>..\..\FPlannerSA\FPlannerSA\packages\GeoAPI.Core.1.7.5\lib\net45\GeoAPI.dll</HintPath>
+    </Reference>
+    <Reference Include="GeoAPI.CoordinateSystems, Version=1.7.5.0, Culture=neutral, PublicKeyToken=a1a0da7def465678, processorArchitecture=MSIL">
+      <HintPath>..\..\FPlannerSA\FPlannerSA\packages\GeoAPI.CoordinateSystems.1.7.5\lib\net45\GeoAPI.CoordinateSystems.dll</HintPath>
+    </Reference>
+    <Reference Include="HarfBuzzSharp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <HintPath>..\..\FPlannerSA\FPlannerSA\packages\HarfBuzzSharp.7.3.0.1\lib\net462\HarfBuzzSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Mapsui, Version=4.1.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\FPlannerSA\FPlannerSA\packages\Mapsui.4.1.3\lib\netstandard2.0\Mapsui.dll</HintPath>
+    </Reference>
+    <Reference Include="Mapsui.Extensions, Version=4.1.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\FPlannerSA\FPlannerSA\packages\Mapsui.Extensions.4.1.3\lib\netstandard2.0\Mapsui.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Mapsui.Nts, Version=4.1.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\FPlannerSA\FPlannerSA\packages\Mapsui.Nts.4.1.3\lib\netstandard2.0\Mapsui.Nts.dll</HintPath>
+    </Reference>
+    <Reference Include="Mapsui.Rendering.Skia, Version=4.1.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\FPlannerSA\FPlannerSA\packages\Mapsui.Rendering.Skia.4.1.3\lib\netstandard2.0\Mapsui.Rendering.Skia.dll</HintPath>
+    </Reference>
+    <Reference Include="Mapsui.Tiling, Version=4.1.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\FPlannerSA\FPlannerSA\packages\Mapsui.Tiling.4.1.3\lib\netstandard2.0\Mapsui.Tiling.dll</HintPath>
+    </Reference>
+    <Reference Include="Mapsui.UI.Wpf, Version=4.1.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\FPlannerSA\FPlannerSA\packages\Mapsui.Wpf.4.1.3\lib\net48\Mapsui.UI.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\FPlannerSA\FPlannerSA\packages\Microsoft.Bcl.AsyncInterfaces.7.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="NetTopologySuite, Version=2.0.0.0, Culture=neutral, PublicKeyToken=f580a05016ebada1, processorArchitecture=MSIL">
+      <HintPath>..\..\FPlannerSA\FPlannerSA\packages\NetTopologySuite.2.5.0\lib\netstandard2.0\NetTopologySuite.dll</HintPath>
+    </Reference>
+    <Reference Include="NetTopologySuite.Features, Version=2.0.0.0, Culture=neutral, PublicKeyToken=f580a05016ebada1, processorArchitecture=MSIL">
+      <HintPath>..\..\FPlannerSA\FPlannerSA\packages\NetTopologySuite.Features.2.1.0\lib\netstandard2.0\NetTopologySuite.Features.dll</HintPath>
+    </Reference>
+    <Reference Include="NetTopologySuite.IO.GeoJSON4STJ, Version=4.0.0.0, Culture=neutral, PublicKeyToken=f580a05016ebada1, processorArchitecture=MSIL">
+      <HintPath>..\..\FPlannerSA\FPlannerSA\packages\NetTopologySuite.IO.GeoJSON4STJ.4.0.0\lib\netstandard2.0\NetTopologySuite.IO.GeoJSON4STJ.dll</HintPath>
+    </Reference>
+    <Reference Include="OsmSharp, Version=6.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\FPlannerSA\FPlannerSA\packages\OsmSharp.6.2.0\lib\net45\OsmSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="OsmSharp.Geo, Version=6.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\FPlannerSA\FPlannerSA\packages\OsmSharp.Geo.6.2.0\lib\net45\OsmSharp.Geo.dll</HintPath>
+    </Reference>
+    <Reference Include="protobuf-net, Version=2.3.7.0, Culture=neutral, PublicKeyToken=257b51d87d2e4d67, processorArchitecture=MSIL">
+      <HintPath>..\..\FPlannerSA\FPlannerSA\packages\protobuf-net.2.3.7\lib\net40\protobuf-net.dll</HintPath>
+    </Reference>
+    <Reference Include="ShimSkiaSharp, Version=1.0.0.3, Culture=neutral, PublicKeyToken=dafe96fe6c845a74, processorArchitecture=MSIL">
+      <HintPath>..\..\FPlannerSA\FPlannerSA\packages\ShimSkiaSharp.1.0.0.3\lib\netstandard2.0\ShimSkiaSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="SkiaSharp, Version=2.88.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <HintPath>..\..\FPlannerSA\FPlannerSA\packages\SkiaSharp.2.88.7\lib\net462\SkiaSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="SkiaSharp.HarfBuzz, Version=2.88.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <HintPath>..\..\FPlannerSA\FPlannerSA\packages\SkiaSharp.HarfBuzz.2.88.7\lib\net462\SkiaSharp.HarfBuzz.dll</HintPath>
+    </Reference>
+    <Reference Include="SkiaSharp.Views.Desktop.Common, Version=2.88.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <HintPath>..\..\FPlannerSA\FPlannerSA\packages\SkiaSharp.Views.Desktop.Common.2.88.7\lib\net462\SkiaSharp.Views.Desktop.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="SkiaSharp.Views.WPF, Version=2.88.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <HintPath>..\..\FPlannerSA\FPlannerSA\packages\SkiaSharp.Views.WPF.2.88.7\lib\net462\SkiaSharp.Views.WPF.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLite-net, Version=1.8.116.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\FPlannerSA\FPlannerSA\packages\sqlite-net-pcl.1.8.116\lib\netstandard2.0\SQLite-net.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.batteries_v2, Version=2.1.6.2060, Culture=neutral, PublicKeyToken=8226ea5df37bcae9, processorArchitecture=MSIL">
+      <HintPath>..\..\FPlannerSA\FPlannerSA\packages\SQLitePCLRaw.bundle_green.2.1.6\lib\net461\SQLitePCLRaw.batteries_v2.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.core, Version=2.1.6.2060, Culture=neutral, PublicKeyToken=1488e028ca7ab535, processorArchitecture=MSIL">
+      <HintPath>..\..\FPlannerSA\FPlannerSA\packages\SQLitePCLRaw.core.2.1.6\lib\netstandard2.0\SQLitePCLRaw.core.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.provider.dynamic_cdecl, Version=2.1.6.2060, Culture=neutral, PublicKeyToken=b68184102cba0b3b, processorArchitecture=MSIL">
+      <HintPath>..\..\FPlannerSA\FPlannerSA\packages\SQLitePCLRaw.provider.dynamic_cdecl.2.1.6\lib\netstandard2.0\SQLitePCLRaw.provider.dynamic_cdecl.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.provider.e_sqlite3, Version=1.1.13.388, Culture=neutral, PublicKeyToken=9c301db686d0bd12, processorArchitecture=MSIL">
+      <HintPath>..\..\FPlannerSA\FPlannerSA\packages\SQLitePCLRaw.provider.e_sqlite3.net45.1.1.13\lib\net45\SQLitePCLRaw.provider.e_sqlite3.dll</HintPath>
+    </Reference>
+    <Reference Include="Svg.Custom, Version=1.0.0.3, Culture=neutral, PublicKeyToken=dafe96fe6c845a74, processorArchitecture=MSIL">
+      <HintPath>..\..\FPlannerSA\FPlannerSA\packages\Svg.Custom.1.0.0.3\lib\netstandard2.0\Svg.Custom.dll</HintPath>
+    </Reference>
+    <Reference Include="Svg.Model, Version=1.0.0.3, Culture=neutral, PublicKeyToken=dafe96fe6c845a74, processorArchitecture=MSIL">
+      <HintPath>..\..\FPlannerSA\FPlannerSA\packages\Svg.Model.1.0.0.3\lib\netstandard2.0\Svg.Model.dll</HintPath>
+    </Reference>
+    <Reference Include="Svg.Skia, Version=1.0.0.3, Culture=neutral, PublicKeyToken=dafe96fe6c845a74, processorArchitecture=MSIL">
+      <HintPath>..\..\FPlannerSA\FPlannerSA\packages\Svg.Skia.1.0.0.3\lib\netstandard2.0\Svg.Skia.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\FPlannerSA\FPlannerSA\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Common, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\FPlannerSA\FPlannerSA\packages\System.Drawing.Common.8.0.0\lib\net462\System.Drawing.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\FPlannerSA\FPlannerSA\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\FPlannerSA\FPlannerSA\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\FPlannerSA\FPlannerSA\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Text.Encoding.CodePages, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\FPlannerSA\FPlannerSA\packages\System.Text.Encoding.CodePages.8.0.0\lib\net462\System.Text.Encoding.CodePages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\FPlannerSA\FPlannerSA\packages\System.Text.Encodings.Web.6.0.0\lib\net461\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=6.0.0.3, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\FPlannerSA\FPlannerSA\packages\System.Text.Json.6.0.3\lib\net461\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\FPlannerSA\FPlannerSA\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\FPlannerSA\FPlannerSA\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="Topten.RichTextKit, Version=0.4.166.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\FPlannerSA\FPlannerSA\packages\Topten.RichTextKit.0.4.166\lib\net462\Topten.RichTextKit.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Avionics\Landing\LandBeaconType.cs" />
+    <Compile Include="Database\ZFile.cs" />
+    <Compile Include="Files_IO\Parser\FlightPlan.cs" />
+    <Compile Include="Files_IO\Writer\FlightPlan.cs" />
+    <Compile Include="MainWindowF\MapControl\OnZoom\CalcDistance.cs" />
+    <Compile Include="MainWindowF\ModeFuncs\Tools.cs" />
+    <Compile Include="MainWindowF\ModeFuncs\UpdateMode\Processor.cs" />
+    <Compile Include="MTypes\Map\Lines\MultiLineBase.cs" />
+    <Compile Include="MTypes\Map\Lines\Polyline.cs" />
+    <Compile Include="MTypes\Map\Pins\FigurePin.cs" />
+    <Compile Include="MTypes\Map\Pins\LabelPin.cs" />
+    <Compile Include="MTypes\Map\Styles\Default.cs" />
+    <Compile Include="MTypes\Map\Wpt\ApproachBeacon.cs" />
+    <Compile Include="MTypes\Map\Wpt\BCN.cs" />
+    <Compile Include="MTypes\Map\Wpt\BRDMBeacon.cs" />
+    <Compile Include="MTypes\Map\Wpt\CivilBeacon.cs" />
+    <Compile Include="MTypes\Map\Wpt\DRPMBeacon.cs" />
+    <Compile Include="MTypes\Map\Wpt\GlidepathBeacon.cs" />
+    <Compile Include="MTypes\Map\Wpt\MilBeacon.cs" />
+    <Compile Include="MTypes\Map\Wpt\RunwayBeacon.cs" />
+    <Compile Include="MTypes\Map\Wpt\Targetpoint.cs" />
+    <Compile Include="MTypes\Map\Wpt\TGT.cs" />
+    <Compile Include="MTypes\Map\Wpt\Waypoint.cs" />
+    <Compile Include="MTypes\Map\Wpt\WPT.cs" />
+    <Compile Include="MTypes\Math\IPolyLine.cs" />
+    <Compile Include="MTypes\Math\PolyLine.cs" />
+    <Compile Include="MTypes\Math\RInt.cs" />
+    <Compile Include="Processing\EditorMode.cs" />
+    <Compile Include="Resources\Images.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Images.resx</DependentUpon>
+    </Compile>
+    <Compile Include="WindowModes\AddWaypoint\Processor.cs" />
+    <Compile Include="WindowModes\CalcAngle\Processor.cs" />
+    <Compile Include="WindowModes\CalcDistance\Processor.cs" />
+    <Compile Include="WindowModes\EditPoints\Processor.cs" />
+    <Compile Include="WindowModes\GetPos\Processor.cs" />
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GVars.cs" />
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Map\GameMap.cs" />
+    <Compile Include="Map\ICanvasMap.cs" />
+    <Compile Include="Map\LayerType.cs" />
+    <Compile Include="MTypes\Map\Pins\DefaultPin.cs" />
+    <Compile Include="MTypes\Map\Pins\PinBase.cs" />
+    <Compile Include="MTypes\Map\Pins\PinType.cs" />
+    <Compile Include="MTypes\Math\ILine.cs" />
+    <Compile Include="MTypes\Math\IPolygon.cs" />
+    <Compile Include="MTypes\Math\Line.cs" />
+    <Compile Include="MTypes\Math\Multiline.cs" />
+    <Compile Include="MTypes\Math\Vector.cs" />
+    <Compile Include="MTypes\Math\Vector2.cs" />
+    <Compile Include="MTypes\Math\Vector3.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Images.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Images.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="OSM\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="samap.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="map.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\resource\satmap.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\resource\GroundLevels.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\..\FPlannerSA\FPlannerSA\packages\HarfBuzzSharp.NativeAssets.macOS.7.3.0.1\build\net462\HarfBuzzSharp.NativeAssets.macOS.targets" Condition="Exists('..\..\FPlannerSA\FPlannerSA\packages\HarfBuzzSharp.NativeAssets.macOS.7.3.0.1\build\net462\HarfBuzzSharp.NativeAssets.macOS.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\FPlannerSA\FPlannerSA\packages\HarfBuzzSharp.NativeAssets.macOS.7.3.0.1\build\net462\HarfBuzzSharp.NativeAssets.macOS.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\FPlannerSA\FPlannerSA\packages\HarfBuzzSharp.NativeAssets.macOS.7.3.0.1\build\net462\HarfBuzzSharp.NativeAssets.macOS.targets'))" />
+    <Error Condition="!Exists('..\..\FPlannerSA\FPlannerSA\packages\HarfBuzzSharp.NativeAssets.Win32.7.3.0.1\build\net462\HarfBuzzSharp.NativeAssets.Win32.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\FPlannerSA\FPlannerSA\packages\HarfBuzzSharp.NativeAssets.Win32.7.3.0.1\build\net462\HarfBuzzSharp.NativeAssets.Win32.targets'))" />
+    <Error Condition="!Exists('..\..\FPlannerSA\FPlannerSA\packages\SkiaSharp.NativeAssets.macOS.2.88.7\build\net462\SkiaSharp.NativeAssets.macOS.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\FPlannerSA\FPlannerSA\packages\SkiaSharp.NativeAssets.macOS.2.88.7\build\net462\SkiaSharp.NativeAssets.macOS.targets'))" />
+    <Error Condition="!Exists('..\..\FPlannerSA\FPlannerSA\packages\SkiaSharp.NativeAssets.Win32.2.88.7\build\net462\SkiaSharp.NativeAssets.Win32.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\FPlannerSA\FPlannerSA\packages\SkiaSharp.NativeAssets.Win32.2.88.7\build\net462\SkiaSharp.NativeAssets.Win32.targets'))" />
+    <Error Condition="!Exists('..\..\FPlannerSA\FPlannerSA\packages\HarfBuzzSharp.NativeAssets.Linux.2.8.2.3\build\net462\HarfBuzzSharp.NativeAssets.Linux.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\FPlannerSA\FPlannerSA\packages\HarfBuzzSharp.NativeAssets.Linux.2.8.2.3\build\net462\HarfBuzzSharp.NativeAssets.Linux.targets'))" />
+    <Error Condition="!Exists('..\..\FPlannerSA\FPlannerSA\packages\SkiaSharp.NativeAssets.Linux.2.88.7\build\net462\SkiaSharp.NativeAssets.Linux.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\FPlannerSA\FPlannerSA\packages\SkiaSharp.NativeAssets.Linux.2.88.7\build\net462\SkiaSharp.NativeAssets.Linux.targets'))" />
+    <Error Condition="!Exists('..\..\FPlannerSA\FPlannerSA\packages\System.Text.Json.6.0.3\build\System.Text.Json.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\FPlannerSA\FPlannerSA\packages\System.Text.Json.6.0.3\build\System.Text.Json.targets'))" />
+    <Error Condition="!Exists('..\..\FPlannerSA\FPlannerSA\packages\SQLitePCLRaw.lib.e_sqlite3.linux.1.1.13\build\net35\SQLitePCLRaw.lib.e_sqlite3.linux.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\FPlannerSA\FPlannerSA\packages\SQLitePCLRaw.lib.e_sqlite3.linux.1.1.13\build\net35\SQLitePCLRaw.lib.e_sqlite3.linux.targets'))" />
+    <Error Condition="!Exists('..\..\FPlannerSA\FPlannerSA\packages\SQLitePCLRaw.lib.e_sqlite3.osx.1.1.13\build\net35\SQLitePCLRaw.lib.e_sqlite3.osx.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\FPlannerSA\FPlannerSA\packages\SQLitePCLRaw.lib.e_sqlite3.osx.1.1.13\build\net35\SQLitePCLRaw.lib.e_sqlite3.osx.targets'))" />
+    <Error Condition="!Exists('..\..\FPlannerSA\FPlannerSA\packages\SQLitePCLRaw.lib.e_sqlite3.v110_xp.1.1.13\build\net35\SQLitePCLRaw.lib.e_sqlite3.v110_xp.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\FPlannerSA\FPlannerSA\packages\SQLitePCLRaw.lib.e_sqlite3.v110_xp.1.1.13\build\net35\SQLitePCLRaw.lib.e_sqlite3.v110_xp.targets'))" />
+  </Target>
+  <Import Project="..\..\FPlannerSA\FPlannerSA\packages\HarfBuzzSharp.NativeAssets.Win32.7.3.0.1\build\net462\HarfBuzzSharp.NativeAssets.Win32.targets" Condition="Exists('..\..\FPlannerSA\FPlannerSA\packages\HarfBuzzSharp.NativeAssets.Win32.7.3.0.1\build\net462\HarfBuzzSharp.NativeAssets.Win32.targets')" />
+  <Import Project="..\..\FPlannerSA\FPlannerSA\packages\SkiaSharp.NativeAssets.macOS.2.88.7\build\net462\SkiaSharp.NativeAssets.macOS.targets" Condition="Exists('..\..\FPlannerSA\FPlannerSA\packages\SkiaSharp.NativeAssets.macOS.2.88.7\build\net462\SkiaSharp.NativeAssets.macOS.targets')" />
+  <Import Project="..\..\FPlannerSA\FPlannerSA\packages\SkiaSharp.NativeAssets.Win32.2.88.7\build\net462\SkiaSharp.NativeAssets.Win32.targets" Condition="Exists('..\..\FPlannerSA\FPlannerSA\packages\SkiaSharp.NativeAssets.Win32.2.88.7\build\net462\SkiaSharp.NativeAssets.Win32.targets')" />
+  <Import Project="..\..\FPlannerSA\FPlannerSA\packages\HarfBuzzSharp.NativeAssets.Linux.2.8.2.3\build\net462\HarfBuzzSharp.NativeAssets.Linux.targets" Condition="Exists('..\..\FPlannerSA\FPlannerSA\packages\HarfBuzzSharp.NativeAssets.Linux.2.8.2.3\build\net462\HarfBuzzSharp.NativeAssets.Linux.targets')" />
+  <Import Project="..\..\FPlannerSA\FPlannerSA\packages\SkiaSharp.NativeAssets.Linux.2.88.7\build\net462\SkiaSharp.NativeAssets.Linux.targets" Condition="Exists('..\..\FPlannerSA\FPlannerSA\packages\SkiaSharp.NativeAssets.Linux.2.88.7\build\net462\SkiaSharp.NativeAssets.Linux.targets')" />
+  <Import Project="..\..\FPlannerSA\FPlannerSA\packages\System.Text.Json.6.0.3\build\System.Text.Json.targets" Condition="Exists('..\..\FPlannerSA\FPlannerSA\packages\System.Text.Json.6.0.3\build\System.Text.Json.targets')" />
+  <Import Project="..\..\FPlannerSA\FPlannerSA\packages\SQLitePCLRaw.lib.e_sqlite3.linux.1.1.13\build\net35\SQLitePCLRaw.lib.e_sqlite3.linux.targets" Condition="Exists('..\..\FPlannerSA\FPlannerSA\packages\SQLitePCLRaw.lib.e_sqlite3.linux.1.1.13\build\net35\SQLitePCLRaw.lib.e_sqlite3.linux.targets')" />
+  <Import Project="..\..\FPlannerSA\FPlannerSA\packages\SQLitePCLRaw.lib.e_sqlite3.osx.1.1.13\build\net35\SQLitePCLRaw.lib.e_sqlite3.osx.targets" Condition="Exists('..\..\FPlannerSA\FPlannerSA\packages\SQLitePCLRaw.lib.e_sqlite3.osx.1.1.13\build\net35\SQLitePCLRaw.lib.e_sqlite3.osx.targets')" />
+  <Import Project="..\..\FPlannerSA\FPlannerSA\packages\SQLitePCLRaw.lib.e_sqlite3.v110_xp.1.1.13\build\net35\SQLitePCLRaw.lib.e_sqlite3.v110_xp.targets" Condition="Exists('..\..\FPlannerSA\FPlannerSA\packages\SQLitePCLRaw.lib.e_sqlite3.v110_xp.1.1.13\build\net35\SQLitePCLRaw.lib.e_sqlite3.v110_xp.targets')" />
+</Project>
