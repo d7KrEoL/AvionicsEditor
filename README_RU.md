@@ -1,6 +1,6 @@
 ﻿# AvionicsEditor 
 
-[<-Go to english version](https://github.com/d7KrEoL/AvionicsEditor/README.md)
+[<-Go to english version](https://github.com/d7KrEoL/AvionicsEditor/blob/master/README.md)
 
 Редактор планов полёта для скрипта [Avionics.lua](https://github.com/d7KrEoL/avionics) ([moonloader](https://www.blast.hk/threads/13305/)).
 
